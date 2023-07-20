@@ -1,4 +1,4 @@
-package ec.espe.edu.examenmongodb.config;
+package ec.edu.espe.examen.config;
 
 import org.bson.types.Decimal128;
 import org.springframework.beans.factory.annotation.Value;

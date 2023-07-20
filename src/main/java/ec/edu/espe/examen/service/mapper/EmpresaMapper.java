@@ -15,5 +15,13 @@ public class EmpresaMapper {
                 .build();
     }
 
+    public static Empleado empleadoRQtoEmpleado(EmpleadoRQ empleadoRQ) {
+        return Empleado.builder()
+                .cedulaDeIdentidad(empleadoRQ.getCedulaDeIdentidad())
+                .nombres(empleadoRQ.getNombres())
+                .numeroDeCuenta(empleadoRQ.getNumeroDeCuenta())
+                .build();
+    }
+
 
 }

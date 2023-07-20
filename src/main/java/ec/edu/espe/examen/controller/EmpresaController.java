@@ -18,13 +18,13 @@ public class EmpresaController {
         this.empresaService = empresaService;
     }
 
-    @PostMapping
+    @PostMapping({"/registrar"})
     public ResponseEntity registrar(@RequestBody EmpresaRQ empresaRQ) {
         try {
             this.empresaService.createEmpresa(empresaRQ);
             return ResponseEntity.ok().build();
         } catch (RuntimeException rte) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().body(rte.getMessage());
         }
     }
 }

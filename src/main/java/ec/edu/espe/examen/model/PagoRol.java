@@ -23,6 +23,6 @@ public class PagoRol {
     private String cuentaPrincipal;
     private BigDecimal valorTotal;
     private BigDecimal valorReal;
-    private List<EmpleadosPago> empleadosPago;
+    private List<EmpleadoPago> empleadosPago;
 }
 

@@ -1,0 +1,19 @@
+{
+  "ruc": "123124",
+  "razonSocial": "Example Company",
+  "cuentaPrincipal": "1234567890123456",
+  "empleados": [
+    {
+      "cedulaDeIdentidad": "1234567890",
+      "apellidos": "Doe",
+      "nombres": "John",
+      "numeroDeCuenta": "1234567890123456"
+    },
+    {
+      "cedulaDeIdentidad": "1234567890",
+      "apellidos": "Noboa",
+      "nombres": "Andres",
+      "numeroDeCuenta": "1234567890123456"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "mes": "Julio",
+  "fechaProceso": "2023-07-19",
+  "rucEmpresa": "123456789",
+  "cuentaPrincipal": "987654321",
+  "empleadosPago": [
+    {
+      "numeroCuenta": "111111",
+      "valor": 2500.50
+    },
+    {
+      "numeroCuenta": "222222",
+      "valor": 1800.75
+    }
+  ]
+}

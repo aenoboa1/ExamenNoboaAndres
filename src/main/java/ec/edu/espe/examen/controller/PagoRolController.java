@@ -4,6 +4,7 @@ import ec.edu.espe.examen.controller.dto.PagoRolRQ;
 import ec.edu.espe.examen.service.PagoRolService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +32,8 @@ public class PagoRolController{
     }
     @GetMapping({"{rucEmpresa}/{mes}"})
     public ResponseEntity validarPagoRolMensual(
-            String rucEmpresa,
-            String mes) {
+            @PathVariable("rucEmpresa")  String rucEmpresa,
+            @PathVariable("mes")  String mes) {
         try {
             this.pagoRolService.validatePagoRol(mes, rucEmpresa);
             return ResponseEntity.ok().build();

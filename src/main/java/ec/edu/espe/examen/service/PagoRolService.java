@@ -11,6 +11,7 @@ import ec.edu.espe.examen.service.mapper.EmpresaMapper;
 import ec.edu.espe.examen.service.mapper.PagorRolMapper;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 @Service
@@ -38,9 +39,12 @@ public class PagoRolService {
         Optional<PagoRol> pagoRolOpt = this.pagoRolRepository.findByMesAndRucEmpresa(pagoRol.getMes(), pagoRol.getRucEmpresa());
         if(pagoRolOpt.isPresent())
         {
-            for (EmpleadosPago empleados : pagoRol.getEmpleadosPago()) {
-                pagoRol.setValorTotal(empleados.getValor());
+            for (EmpleadosPago empleadosPago : pagoRol.getEmpleadosPago()) {
+                pagoRol.setValorTotal(
+                        pagoRol.getValorTotal().add(empleadosPago.getValor())
+                );
             }
+            pagoRol.setValorReal(BigDecimal.valueOf(0));
             this.pagoRolRepository.save(pagoRol);
         }
         else {

@@ -25,16 +25,14 @@ public class PagoRolService {
         this.pagoRolRepository = pagoRolRepository;
         this.empresaRepository = empresaRepository;
     }
-    // implement a service that receives a pagorol
     public void validatePagoRol(String mes, String rucEmpresa){
         Optional<Empresa> empresa = this.empresaRepository.findByRuc(rucEmpresa);
-        // iterate over empleados List in empresa
         if(empresa.isPresent()){
+            for()
 
         }
     }
     public void createPagoRolMensual(PagoRolRQ pagoRolRQ) {
-        // transform to pagoRol
         PagoRol pagoRol = PagorRolMapper.transformPagoRol(pagoRolRQ);
         Optional<PagoRol> pagoRolOpt = this.pagoRolRepository.findByMesAndRucEmpresa(pagoRol.getMes(), pagoRol.getRucEmpresa());
         if(pagoRolOpt.isPresent())
